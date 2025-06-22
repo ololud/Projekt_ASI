@@ -1,0 +1,33 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.9"
+name = "gss_wage_analysis"
+readme = "README.md"
+dynamic = [ "version",]
+dependencies = [ "ipython>=8.10", "jupyterlab>=3.0", "notebook", "kedro~=0.19.14",]
+
+[project.scripts]
+gss-wage-analysis = "gss_wage_analysis.__main__:main"
+
+[tool.kedro]
+package_name = "gss_wage_analysis"
+project_name = "gss_wage_analysis"
+kedro_init_version = "0.19.14"
+tools = "['Data Structure']"
+example_pipeline = "False"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.setuptools.dynamic.version]
+attr = "gss_wage_analysis.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "4a1d076284ee4357bebd38b935f576d1"

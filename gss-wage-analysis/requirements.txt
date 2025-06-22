@@ -1,0 +1,11 @@
+ipython>=8.10
+jupyterlab>=3.0
+kedro~=0.19.14
+notebook
+pandas~=2.3.0
+scikit-learn~=1.7.0
+pyarrow
+kedro-datasets
+azure-storage-blob
+joblib~=1.5.1
+xgboost
