@@ -1,0 +1,36 @@
+# Here you can define all your datasets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+gss_wages:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/gss_wages.csv
+
+cleaned_data:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/cleaned_data.parquet
+
+X_train:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_train.parquet
+
+X_test:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_test.parquet
+
+y_train:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_train.parquet
+
+y_test:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_test.parquet
+
+model_score:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/score.pkl
+
+scaler:
+  type: pickle.PickleDataset
+  filepath: data/06_models/scaler.pkl
